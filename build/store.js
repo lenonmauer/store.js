@@ -1,5 +1,3 @@
-'use strict';
-
 (function (w) {
     'use strict';
 
@@ -46,7 +44,7 @@
 
     var getAll = function getAll() {
         var keys = Object.keys(configs.method);
-        return Array.from(keys, function (key) {
+        return keys.map(function (key) {
             var item = {};
             item[key] = get(key);
             return item;

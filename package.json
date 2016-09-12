@@ -12,6 +12,7 @@
   "author": "lenon <lenonmauer@gmail.br>",
   "license": "WTFPL",
   "devDependencies": {
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "babel-preset-es2015": "^6.14.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",

@@ -26,7 +26,7 @@ gulp.task('jshint', () => {
 gulp.task('build', ['clean', 'jshint'], () => {
 	return 	gulp.src('src/store.js')
             .pipe(sourcemaps.init())
-            .pipe(babel({presets: ['es2015']}))
+            .pipe(babel())
             .pipe(strip())
             .pipe(gulp.dest(DEST))
             .pipe(uglify())

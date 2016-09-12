@@ -44,7 +44,7 @@
 
     const getAll = () => {
         const keys = Object.keys(configs.method);
-        return Array.from(keys, (key) => {
+        return keys.map((key) => {
             const item = {};
             item[key] = get(key);
             return item;
