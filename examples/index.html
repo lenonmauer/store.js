@@ -4,7 +4,66 @@
     <title></title>
   </head>
   <body>
-    Store.js
+    <style>
+    input{
+      width: 300px;
+      height: 16px;
+      padding: 8px;
+    }
+    button {
+      height: 32px;
+      padding: 8px;
+    }
+    </style>
+    <input id="store-key" placeholder="Key for Data...">
+    <input id="store-val" placeholder="Value to Store...">
+    <button id="btn-store">Store this</button>
+    <br><br>
+    <input id="get-key" placeholder="Type a Key to Get the Value...">
+    <button id="btn-get">GET this</button>
+    <br>
     <script src="assets/store.js" async></script>
+
+    <script>
+      (function(){
+        var inputStoreKey = document.getElementById('store-key');
+        var inputStoreVal = document.getElementById('store-val');
+        var inputGet = document.getElementById('get-key');
+        var btnStore = document.getElementById('btn-store');
+        var btnGet = document.getElementById('btn-get');
+
+        btnStore.addEventListener('click', function(){
+          var key = inputStoreKey.value;
+          var value = inputStoreVal.value;
+
+          if(!key.length || !value.length){
+            return;
+          }
+
+          store.set(key, value);
+          alert(key+' has stored!');
+          resetStoreFields();
+        });
+
+        btnGet.addEventListener('click', function(){
+          var key = inputGet.value;
+
+          if(!key.length){
+            return;
+          }
+
+          var result = store.get(key);
+          alert(key+' = '+result);
+        });
+
+        function resetStoreFields(){
+          inputStoreKey.value = '';
+          inputStoreVal.value = '';
+        }
+
+
+    })();
+      
+    </script>
   </body>
 </html>
